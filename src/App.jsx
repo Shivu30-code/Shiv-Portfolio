@@ -1,6 +1,6 @@
 import { useEffect, useState,useRef  } from 'react';
 import { personal, navLinks, stats, skills, projects, experience, certificates } from './data/portfolioData';
-import profile from './assets/shiv.jpg';
+import profile from './assets/shivam.jpeg';
 import emailjs from "@emailjs/browser";
 
 function App() {

@@ -35,7 +35,7 @@ Currently the hero uses an SP avatar. To use your photo:
 2. Replace the avatar inside `Hero` in `src/App.jsx` with:
 
 ```jsx
-<img src="/profile.jpg" alt="Shivam Pal" />
+<img src="/profile.jpeg" alt="Shivam Pal" />
 ```
 
 Then add this CSS:

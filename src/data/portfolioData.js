@@ -2,7 +2,7 @@ export const personal = {
   name: 'Shivam Pal',
   role: 'Full Stack Developer',
   tagLine: 'I craft scalable, production-ready MERN stack web applications with premium UI, clean backend logic, and business-focused digital experiences.',
-  email: 'pal513990@gmail.com',
+  email: 'palshivam3004@gmail.com',
   phone: '+91 8155855935',
   location: 'Gujarat, India',
   github: 'https://github.com/Shivu30-code',
@@ -19,10 +19,10 @@ export const stats = [
 ];
 
 export const skills = [
-  { category: 'Frontend', icon: '⚛️', items: ['React.js', 'Vite', 'Tailwind CSS', 'JavaScript', 'Responsive UI'] },
+  { category: 'Frontend', icon: '⚛️', items: ['React.js', 'Next.js', 'Vite', 'Tailwind CSS', 'JavaScript', 'Responsive UI'] },
   { category: 'Backend', icon: '🧠', items: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', 'MVC'] },
-  { category: 'Database', icon: '🍃', items: ['MongoDB', 'Mongoose', 'Schema Design', 'Aggregation'] },
-  { category: 'AI & Tools', icon: '✨', items: ['Prompt Engineering', 'ChatGPT', 'GitHub', 'Postman', 'Cloudinary'] },
+  { category: 'Database', icon: '🍃', items: ['MongoDB', 'Mongoose', 'SQL', 'MySQL', 'Schema Design', 'Aggregation'] },
+  { category: 'AI & Tools', icon: '✨', items: ['Prompt Engineering', 'Claude', 'ChatGPT', 'GitHub', 'Postman', 'Cloudinary'] },
 ];
 
 export const projects = [
@@ -45,6 +45,15 @@ export const projects = [
     impact: 'AI SaaS-style full-stack product',
   },
   {
+    icon: '🏆',
+    name: 'Quizonary',
+    live: "https://quizonary-sk2-lake.vercel.app/",
+    type: 'Live Quiz & Rewards Platform',
+    desc: 'Quiz platform with live quiz contests, practice mode, multiple categories (GK, Science, Sports, Tech, History), leaderboards, prize pools, and user login/registration with a responsive UI.',
+    stack: ['React', 'Node.js', 'MongoDB', 'Vercel'],
+    impact: 'Real-time style quiz competition product',
+  },
+  {
     icon: '📊',
     name: 'Analytics Dashboard',
     type: 'Data Analytics Project',
@@ -55,6 +64,26 @@ export const projects = [
 ];
 
 export const experience = [
+  {
+    role: "Full Stack Developer",
+    company: "Solmarkt",
+    period: "Dec 2026 - Present",
+    points: [
+      "Building and maintaining scalable web platform features using Next.js, React.js, Node.js, and modern databases.",
+      "Developing responsive, performance-focused interfaces and integrating REST APIs end to end.",
+      "Collaborating with the team on architecture, code reviews, and production deployments.",
+    ],
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Mirani Marketing",
+    period: "Sep 2026 - Nov 2026",
+    points: [
+      "Developed and delivered full-stack web solutions for marketing and business needs using React.js, Node.js, Express.js, and MongoDB.",
+      "Built responsive, SEO-friendly interfaces and integrated backend APIs and forms.",
+      "Worked closely with the team to ship features on time with clean, maintainable code.",
+    ],
+  },
   {
     role: "Full Stack Developer Intern",
     company: "Tech Reale",
@@ -75,17 +104,6 @@ export const experience = [
       "Created interactive dashboards and data visualizations for effective decision-making and reporting.",
       "Applied data cleaning, transformation, and analytical techniques to improve data accuracy and quality.",
       "Strengthened problem-solving and analytical skills through real-world data analysis projects and case studies.",
-    ],
-  },
-  {
-    role: "Founder & Full Stack Developer",
-    company: "Star Venture Group of Companies",
-    period: "Present",
-    points: [
-      "Designed and developed a modern business platform for Tourism, Transport, Employment, and Immigration services.",
-      "Built the complete website using React.js with a focus on premium UI/UX, responsiveness, and performance.",
-      "Implemented enquiry forms, dynamic destination pages, transportation modules, and interactive user experiences.",
-      "Continuously enhanced the platform with new features, SEO optimization, and business-focused digital solutions.",
     ],
   },
 ];

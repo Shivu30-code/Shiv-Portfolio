@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [typed, setTyped] = useState('');
-  const fullText = 'MERN Stack Developer | AI Enthusiast | Founder Mindset';
+  const fullText = 'MERN Stack Developer | React Developer | Frontend & Backend Developer';
 
   useEffect(() => {
     let index = 0;
@@ -16,6 +16,15 @@ function App() {
       if (index > fullText.length) index = 0;
     }, 80);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const move = (e) => {
+      document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+      document.documentElement.style.setProperty('--my', e.clientY + 'px');
+    };
+    window.addEventListener('mousemove', move);
+    return () => window.removeEventListener('mousemove', move);
   }, []);
 
   useEffect(() => {
@@ -156,12 +165,14 @@ function Skills() {
 }
 
 function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
   return (
     <section id="projects" className="section projects">
       <SectionHeader label="Projects" title="Featured" highlight="Work" />
       <div className="projects-grid">
-        {projects.map((project) => (
-          <article className="project-card reveal" key={project.name}>
+        {visibleProjects.map((project) => (
+          <article className="project-card reveal visible" key={project.name}>
             <div className="project-top">
               <div className="project-icon">{project.icon}</div>
               <div className="project-links">
@@ -184,6 +195,13 @@ function Projects() {
           </article>
         ))}
       </div>
+      {projects.length > 3 && (
+        <div className="more-wrap">
+          <button className="btn ghost" onClick={() => setShowAll((v) => !v)}>
+            {showAll ? 'Show Less' : 'More Projects'}
+          </button>
+        </div>
+      )}
     </section>
   );
 }
@@ -194,7 +212,7 @@ function Experience() {
       <SectionHeader label="Experience" title="My" highlight="Journey" />
       <div className="timeline">
         {experience.map((item) => (
-          <div className="timeline-item reveal" key={item.role}>
+          <div className="timeline-item reveal" key={item.company}>
             <span className="dot" />
             <div className="exp-card">
               <div className="exp-top"><h3>{item.role}</h3><span>{item.period}</span></div>

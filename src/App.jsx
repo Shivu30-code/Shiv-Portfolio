@@ -2,6 +2,7 @@ import { useEffect, useState,useRef  } from 'react';
 import { personal, navLinks, stats, skills, projects, experience, certificates } from './data/portfolioData';
 import profile from './assets/shivam.jpeg';
 import emailjs from "@emailjs/browser";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,6 +49,7 @@ function App() {
       <Certificates />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }

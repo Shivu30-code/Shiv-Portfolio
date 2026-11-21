@@ -246,9 +246,12 @@ function Certificates() {
 
 function Contact() {
   const form = useRef();
+  const [popup, setPopup] = useState(null);
+  const [sending, setSending] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSending(true);
 
     emailjs
       .sendForm(
@@ -258,13 +261,14 @@ function Contact() {
         "EOLMay_D3E56F0Ohm"
       )
       .then(() => {
-        alert("Message sent successfully!");
         form.current.reset();
+        setPopup({ ok: true, title: 'Message sent', text: "Thanks for reaching out. I'll get back to you soon." });
       })
       .catch((error) => {
         console.log(error);
-        alert("Failed to send message.");
-      });
+        setPopup({ ok: false, title: 'Something went wrong', text: "Your message didn't go through. Please try again." });
+      })
+      .finally(() => setSending(false));
   };
 
   return (
@@ -314,11 +318,22 @@ function Contact() {
             ></textarea>
           </label>
 
-          <button className="btn primary" type="submit">
-            Send Message
+          <button className="btn primary" type="submit" disabled={sending}>
+            {sending ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </div>
+
+      {popup && (
+        <div className="popup-overlay" onClick={() => setPopup(null)}>
+          <div className={popup.ok ? 'popup ok' : 'popup err'} onClick={(e) => e.stopPropagation()}>
+            <div className="popup-icon">{popup.ok ? '✓' : '!'}</div>
+            <h3>{popup.title}</h3>
+            <p>{popup.text}</p>
+            <button className="btn primary" onClick={() => setPopup(null)}>Close</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

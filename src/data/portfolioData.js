@@ -2,7 +2,7 @@ export const personal = {
   name: 'Shivam Pal',
   role: 'Full Stack Developer',
   tagLine: 'I craft scalable, production-ready MERN stack web applications with premium UI, clean backend logic, and business-focused digital experiences.',
-  email: 'palshivam3004@gmail.com',
+  email: 'pal513990@gmail.com',
   phone: '+91 8155855935',
   location: 'Gujarat, India',
   github: 'https://github.com/Shivu30-code',
